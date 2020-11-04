@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<TargetFramework>net5.0-windows</TargetFramework>
+	<AnalysisLevel>preview</AnalysisLevel>
+	<UseWPF>true</UseWPF>
+	<AssemblyName>GKsWpfPrismLib.Module.Base</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+	<PackageReference Include="MahApps.Metro" Version="2.3.3" />
+	<PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.8.0" />
+	<PackageReference Include="MaterialDesignColors" Version="2.0.0-ci2206" />
+	<PackageReference Include="MaterialDesignThemes" Version="4.0.0-ci2206" />
+	<PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.6-ci2206" />
+	<PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+	<PackageReference Include="ReactiveProperty.WPF" Version="7.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+	<ProjectReference Include="..\GKsLib\GKsLib.csproj" />
+	<ProjectReference Include="..\GKWpfLib\GKsWpfLib.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+		<AnalysisLevel>preview</AnalysisLevel>
+		<TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+		<Nullable>enable</Nullable>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<!--
+		<OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\GithubInfo</OutDir>
+		<OutLibDir>$(OutDir)\libs</OutLibDir>
+		<OutModuleDir>$(OutDir)\modules</OutModuleDir>
+		<OutServiceDir>$(OutDir)\service</OutServiceDir>
+		-->
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<PackageReference GeneratePathProperty="true" />
+	</ItemDefinitionGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
+
+</Project>

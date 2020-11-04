@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<TargetFramework>net5.0-windows</TargetFramework>
+	<AnalysisLevel>preview</AnalysisLevel>
+	<UseWPF>true</UseWPF>
+	<AssemblyName>GithubInfo.Core</AssemblyName>
+	<Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+	<PackageReference Include="Prism.Container.Extensions" Version="7.2.0.1054" />
+	<PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\GKsLib\GKsLib.csproj" />
+    <ProjectReference Include="..\..\Libs\GKWpfLib\GKsWpfLib.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<OutputType>WinExe</OutputType>
+	<TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+	<AnalysisLevel>preview</AnalysisLevel>
+	<UseWPF>true</UseWPF>
+	<AssemblyName>GithubInfo</AssemblyName>
+	<Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+	<PackageReference Include="MahApps.Metro" Version="2.3.3" />
+	<PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.8.0" />
+	<PackageReference Include="MaterialDesignColors" Version="2.0.0-ci2206" />
+	<PackageReference Include="MaterialDesignThemes" Version="4.0.0-ci2206" />
+	<PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.6-ci2206" />
+	<PackageReference Include="Prism.Container.Extensions" Version="7.2.0.1054" />
+	<PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+  </ItemGroup>
+  <ItemGroup>
+	<ProjectReference Include="..\..\Libs\GKsLib\GKsLib.csproj" />
+	<ProjectReference Include="..\..\Libs\GKsWpfPrismLib.Module.Base\GKsWpfPrismLib.Module.Base.csproj" />
+	<ProjectReference Include="..\..\Libs\GKWpfLib\GKsWpfLib.csproj" />
+	<ProjectReference Include="..\GithubInfo.Core\GithubInfo.Core.csproj" />
+	<ProjectReference Include="..\Modules\GithubInfo.Modules.StarredGithubDownloader\GithubInfo.Modules.StarredGithubDownloader.csproj" />
+	<ProjectReference Include="..\Services\GithubInfo.Services.Interfaces\GithubInfo.Services.Interfaces.csproj" />
+	<ProjectReference Include="..\Services\GithubInfo.Services\GithubInfo.Services.csproj" />
+  </ItemGroup>
+</Project>

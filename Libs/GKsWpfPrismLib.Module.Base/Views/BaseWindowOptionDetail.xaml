@@ -1,0 +1,180 @@
+﻿<UserControl
+	x:Class="GKsWpfPrismLib.Module.Base.Views.BaseWindowOptionDetail"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:prism="http://prismlibrary.com/"
+	d:DesignHeight="300"
+	d:DesignWidth="400"
+	prism:ViewModelLocator.AutoWireViewModel="True"
+	mc:Ignorable="d">
+	<materialDesign:Card Background="{DynamicResource MaterialDesignBackground}">
+		<StackPanel>
+			<Expander Header="一般" IsExpanded="True">
+				<WrapPanel
+					Margin="5,5,5,5"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+					<Grid Margin="0,0,40,10" HorizontalAlignment="Stretch">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<TextBlock
+							Grid.Column="0"
+							Margin="0,0,10,0"
+							VerticalAlignment="Center">
+							テーマカラー
+						</TextBlock>
+						<ComboBox
+							Grid.Column="1"
+							ItemsSource="{Binding AppThemes}"
+							SelectedIndex="{Binding SelectedTheme.Value, Mode=TwoWay}"
+							Style="{DynamicResource MahApps.Styles.ComboBox.Virtualized}">
+							<ComboBox.ItemTemplate>
+								<DataTemplate DataType="{x:Type ComboBoxItem}">
+									<WrapPanel>
+										<Ellipse
+											Width="16"
+											Height="16"
+											Fill="{Binding BorderColorBrush}"
+											Stroke="{Binding ColorBrush}"
+											StrokeThickness="1" />
+										<TextBlock Margin="5,0,0,0" Text="{Binding Name}" />
+									</WrapPanel>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+					</Grid>
+					<!--
+					<Grid Margin="0,0,40,10" HorizontalAlignment="Stretch">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<TextBlock
+							Grid.Column="0"
+							Margin="0,0,10,0"
+							VerticalAlignment="Center">
+							アクセントカラー
+						</TextBlock>
+						<ComboBox
+							Grid.Column="1"
+							ItemsSource="{Binding AccentColors}"
+							SelectedIndex="{Binding SelectedAccount.Value, Mode=TwoWay}"
+							Style="{DynamicResource MahApps.Styles.ComboBox.Virtualized}">
+							<ComboBox.ItemTemplate>
+								<DataTemplate DataType="{x:Type ComboBoxItem}">
+									<WrapPanel>
+										<Ellipse
+											Width="16"
+											Height="16"
+											Fill="{Binding ColorBrush}"
+											StrokeThickness="1" />
+										<TextBlock Margin="5,0,0,0" Text="{Binding Name}" />
+									</WrapPanel>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+					</Grid>
+					<Grid Margin="0,0,40,10" HorizontalAlignment="Stretch">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<TextBlock
+							Grid.Column="0"
+							Margin="0,0,10,0"
+							VerticalAlignment="Center">
+							文字サイズ
+						</TextBlock>
+						<TextBlock
+							Grid.Column="1"
+							Margin="0,0,10,0"
+							VerticalAlignment="Center"
+							Text="{Binding ElementName=WordSize, Path=Value, StringFormat='{}{00:N0}'}" />
+						<Slider
+							x:Name="WordSize"
+							Grid.Column="2"
+							Width="200"
+							Controls:SliderHelper.ChangeValueBy="LargeChange"
+							Controls:SliderHelper.EnableMouseWheel="MouseHover"
+							AutoToolTipPlacement="TopLeft"
+							LargeChange="1"
+							Maximum="50"
+							Minimum="10"
+							Orientation="Horizontal"
+							SmallChange="1"
+							Value="{Binding FontSize}" />
+					</Grid>-->
+				</WrapPanel>
+			</Expander>
+			<Border
+				Height="2"
+				HorizontalAlignment="Stretch"
+				Background="{DynamicResource MaterialDesignDivider}"
+				SnapsToDevicePixels="True" />
+			<!--
+			<Expander Header="一般" IsExpanded="True">
+				<WrapPanel
+					Margin="5,5,5,5"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch">
+					<Grid Margin="0,0,40,10" HorizontalAlignment="Stretch">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<TextBlock
+							Grid.Column="0"
+							Margin="0,0,10,0"
+							VerticalAlignment="Center">
+							アクセントカラー
+						</TextBlock>
+						<ComboBox Grid.Column="1" SelectedIndex="0">
+							<ComboBox.ContextMenu>
+								<ContextMenu>
+									<MenuItem Header="Test" />
+								</ContextMenu>
+							</ComboBox.ContextMenu>
+							<ComboBoxItem Content="Item 1" />
+							<ComboBoxItem Content="Item 2" />
+							<ComboBoxItem Content="Very long Item 3 for MahApps.Metro" />
+							<ComboBoxItem Content="Item 4" />
+						</ComboBox>
+					</Grid>
+					<Grid Margin="0,0,40,10" HorizontalAlignment="Stretch">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<TextBlock
+							Grid.Column="0"
+							Margin="0,0,10,0"
+							VerticalAlignment="Center">
+							アクセントカラー
+						</TextBlock>
+						<ComboBox Grid.Column="1" SelectedIndex="0">
+							<ComboBox.ContextMenu>
+								<ContextMenu>
+									<MenuItem Header="Test" />
+								</ContextMenu>
+							</ComboBox.ContextMenu>
+							<ComboBoxItem Content="Item 1" />
+							<ComboBoxItem Content="Item 2" />
+							<ComboBoxItem Content="Very long Item 3 for MahApps.Metro" />
+							<ComboBoxItem Content="Item 4" />
+						</ComboBox>
+					</Grid>
+				</WrapPanel>
+			</Expander>-->
+		</StackPanel>
+	</materialDesign:Card>
+</UserControl>

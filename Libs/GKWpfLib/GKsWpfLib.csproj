@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net5.0-windows</TargetFramework>
+	<AnalysisLevel>preview</AnalysisLevel>
+	<UseWPF>true</UseWPF>
+	<Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="ControlzEx" Version="4.4.0" />
+	<PackageReference Include="MahApps.Metro" Version="2.3.3" />
+	<PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+	<PackageReference Include="System.Reactive" Version="5.0.0-preview.220" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\GKsLib\GKsLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+</Project>

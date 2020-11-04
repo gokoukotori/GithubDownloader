@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+	<AnalysisLevel>preview</AnalysisLevel>
+	<UseWPF>true</UseWPF>
+	<AssemblyName>GithubInfo.Modules.StarredGithubDownloader</AssemblyName>
+	<Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+	<PackageReference Include="LibGit2Sharp" Version="0.27.0-preview-0034" />
+	<PackageReference Include="MaterialDesignColors" Version="2.0.0-ci2206" />
+	<PackageReference Include="MaterialDesignThemes" Version="4.0.0-ci2206" />
+	<PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.6-ci2206" />
+	<PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+	<PackageReference Include="ReactiveProperty.WPF" Version="7.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+	<ProjectReference Include="..\..\..\GithubInfo.Services.Github.Interface\GithubInfo.Services.Github.Interface.csproj" />
+	<ProjectReference Include="..\..\..\GithubInfo.Services.Github\GithubInfo.Services.Github.csproj" />
+	<ProjectReference Include="..\..\..\Libs\GKsLib\GKsLib.csproj" />
+	<ProjectReference Include="..\..\..\Libs\GKWpfLib\GKsWpfLib.csproj" />
+	<ProjectReference Include="..\..\GithubInfo.Core\GithubInfo.Core.csproj" />
+  </ItemGroup>
+</Project>

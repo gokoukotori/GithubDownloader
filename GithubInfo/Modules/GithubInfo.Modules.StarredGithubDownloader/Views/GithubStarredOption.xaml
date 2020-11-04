@@ -1,0 +1,75 @@
+﻿<UserControl
+	x:Class="GithubInfo.Modules.StarredGithubDownloader.Views.GithubStarredOption"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:prism="http://prismlibrary.com/"
+	d:DesignHeight="300"
+	d:DesignWidth="400"
+	prism:ViewModelLocator.AutoWireViewModel="True"
+	mc:Ignorable="d">
+	<materialDesign:Card Background="{DynamicResource MaterialDesignBackground}">
+		<StackPanel>
+			<Expander Header="認証" IsExpanded="True">
+				<StackPanel
+					Margin="5,0,5,5"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+					<StackPanel Margin="30,5">
+						<TextBlock VerticalAlignment="Center" FontSize="20">
+							Personal Access Token
+						</TextBlock>
+						<Grid Margin="0,10,0,0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+							</Grid.RowDefinitions>
+							<!--
+							<TextBlock
+								Grid.Column="0"
+								Margin="0,0,10,0"
+								VerticalAlignment="Center">
+								ユーザーネーム
+							</TextBlock>
+							<TextBox Grid.Column="1" Text="" />
+							-->
+							<TextBlock
+								Grid.Row="1"
+								Grid.Column="0"
+								Margin="0,20,10,0"
+								VerticalAlignment="Center">
+								Token
+							</TextBlock>
+							<TextBox
+								Grid.Row="1"
+								Grid.Column="1"
+								Margin="0,20,0,0"
+								IsEnabled="{Binding IsNotExcuteing.Value}"
+								Text="{Binding Token.Value}" />
+						</Grid>
+						<Button
+							Margin="0,20,0,0"
+							HorizontalAlignment="Right"
+							Command="{Binding ExcuteAuthCommand}"
+							Content="確認／保存" />
+					</StackPanel>
+				</StackPanel>
+			</Expander>
+			<Border
+				Height="2"
+				HorizontalAlignment="Stretch"
+				Background="{DynamicResource MaterialDesignDivider}"
+				SnapsToDevicePixels="True" />
+		</StackPanel>
+	</materialDesign:Card>
+</UserControl>

@@ -20,7 +20,7 @@ namespace GithubInfo.Modules.StarredGithubDownloader.ViewModels
 	public class GithubStarredInfoViewModel : RegionViewModelBase
 	{
 		public ReactiveCollection<TargetDownload> TargetDownloads { get; set; }
-		public AsyncReactiveCommand DownloadCommand { get; }
+		public AsyncReactiveCommand<string> DownloadCommand { get; }
 		public AsyncReactiveCommand CreateListCommand { get; }
 
 		public ReactiveProperty<string> TargetDirectory { get; set; }
@@ -36,7 +36,7 @@ namespace GithubInfo.Modules.StarredGithubDownloader.ViewModels
 			TargetDownloads = new ReactiveCollection<TargetDownload>().AddTo(Disposable);
 			CreateListCommand = new AsyncReactiveCommand().AddTo(Disposable);
 			CreateListCommand.Subscribe(CreateList);
-			DownloadCommand = new AsyncReactiveCommand().AddTo(Disposable);
+			DownloadCommand = new AsyncReactiveCommand<string>().AddTo(Disposable);
 			DownloadCommand.Subscribe(Download);
 			TargetDirectory = new ReactiveProperty<string>
 			{
@@ -53,7 +53,7 @@ namespace GithubInfo.Modules.StarredGithubDownloader.ViewModels
 			IsDownloading = new ReactiveProperty<bool>().AddTo(Disposable);
 		}
 
-		private async Task Download()
+		private async Task Download(string folderPath)
 		{
 			Log.Value = "";
 			IsDownloading.Value = true;
@@ -63,7 +63,7 @@ namespace GithubInfo.Modules.StarredGithubDownloader.ViewModels
 				if (!item.IsSelected) continue;
 				Log.Value = item.Repository.CloneUrl;
 				await Task.Run(() => {
-					LibGit2Sharp.Repository.Clone(item.Repository.CloneUrl, Path.Combine(TargetDirectory.Value, item.Repository.FullName));
+					LibGit2Sharp.Repository.Clone(item.Repository.CloneUrl, Path.Combine(folderPath, item.Repository.FullName));
 					return Task.CompletedTask;
 				});
 			}
